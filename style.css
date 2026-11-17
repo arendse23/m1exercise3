@@ -1,0 +1,211 @@
+/* Global Reset & Colors (White, Blue, Grey) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9; /* Light grey background */
+  color: #333333;           /* Dark grey text */
+  line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff; /* White */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  z-index: 100;
+  transition: background-color 0.3s ease;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #1a73e8; /* Blue */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #555555; /* Grey */
+  font-weight: bold;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.nav-links a:hover {
+  color: #1a73e8; /* Blue hover */
+}
+
+/* Hero Section */
+.hero {
+  height: 70vh;
+ background-image: url(image1.jpg);
+ background-size: cover;
+ background-position: center;
+ background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  margin-top: 50px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #222222;
+}
+
+.hero p {
+  color: #666666;
+  margin-bottom: 20px;
+}
+
+/* CTA Button with Pulse Animation */
+.cta-btn {
+  display: inline-block;
+  background-color: #1a73e8; /* Blue */
+  color: #ffffff;            /* White */
+  padding: 10px 25px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  animation: pulse 2s infinite;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+  background-color: #1557b0;
+  transform: scale(1.05); /* Scale transform */
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(26, 115, 232, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(26, 115, 232, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(26, 115, 232, 0); }
+}
+
+/* Products Section */
+.products-section {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.products-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #222222;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Product Cards with Slide-in & Hover */
+.product-card {
+  background-color: #ffffff; /* White */
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #dcdcdc; /* Light grey border */
+  box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+  opacity: 0;
+  animation: slideIn 0.8s ease forwards;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+     background-color: #1557b0;
+  transform: scale(1.05);
+}
+
+/* Slide-in delay for each card */
+.product-card:nth-child(1) { animation-delay: 0.1s; }
+.product-card:nth-child(2) { animation-delay: 0.2s; }
+.product-card:nth-child(3) { animation-delay: 0.3s; }
+.product-card:nth-child(4) { animation-delay: 0.4s; }
+.product-card:nth-child(5) { animation-delay: 0.5s; }
+.product-card:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px); /* Translate transform */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card Hover Animation */
+.product-card:hover {
+  transform: translateY(-5px); /* Translate & scale up */
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-body h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.card-body p {
+  color: #777777; /* Grey */
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-weight: bold;
+  color: #1a73e8; /* Blue */
+}
+
+.buy-btn {
+  background-color: #f1f3f5; /* Grey */
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333333;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.buy-btn:hover {
+  background-color: #1a73e8; /* Blue */
+  color: #ffffff;            /* White */
+}
+
